@@ -50,15 +50,15 @@ async function runAggregation() {
             {
                 $sort: {
                     store: 1,
-                    month: 1
+                    month: 1,
                 }
             }
         ]).toArray();
 
-        console.log("Aggregation Results:", result);
+        console.log("Aggregation Results : ", result);
         return result;
     } catch (error) {
-        console.error("Error during aggregation:", error);
+        console.error("Error during aggregation: ", error);
         throw error;
     } finally {
         await client.close();
